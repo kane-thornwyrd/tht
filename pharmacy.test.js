@@ -6,4 +6,6 @@ describe("Pharmacy", () => {
       [new Drug("test", 1, 2)],
     );
   });
+
+  
 });
