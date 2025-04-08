@@ -8,11 +8,14 @@ const MAX_BENEFIT = 50
 const MIN_EXPIRATION_REMAINING = -Infinity
 const MAX_EXPIRATION_REMAINING = Infinity
 
-const constrainBenefit = (benefit) => (cb) => 
-  Math.min(Math.max(cb(benefit), MIN_BENEFIT), MAX_BENEFIT)
+const constrainInteger = (min, max) => (data) => (callback) => 
+  Math.min(Math.max(callback(data), min), max)
 
-const constrainExpiresIn = (expiresIn) => (cb) => 
-  Math.min(Math.max(cb(expiresIn), MIN_EXPIRATION_REMAINING), MAX_EXPIRATION_REMAINING)
+const constrainBenefit = constrainInteger(
+  MIN_BENEFIT, MAX_BENEFIT)
+
+const constrainExpiresIn = constrainInteger(
+  MIN_EXPIRATION_REMAINING, MAX_EXPIRATION_REMAINING)
 
 const given_a_shelflife_simulation_of = (a_drug_behavior) => {
   const baseDrugInfos = {
