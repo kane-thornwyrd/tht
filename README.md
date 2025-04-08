@@ -1,3 +1,5 @@
+**Check the [dev diary](DIARY.md).**
+
 # LegalPlace Take-Home Test Specification
 
 You are a new developer in the Falcon team, and your first job is to add a feature to an old existing piece of code.
